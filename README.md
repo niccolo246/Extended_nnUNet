@@ -12,3 +12,5 @@ nnUNet was developed by Isensee et al. and further information on the original f
 The nnUNet utilises a standard UNet type architecture which is self-configuring in terms of both depth and hyperparameters. 
 We procide code which extends the original nnUNet so as to allow the use of more advanced UNet variations which involve the integration of residual blocks, dense blocks, and inception blocks. 
 
+Note: The provided code adapts and modifies the original nnUNet code deveoped by Isensee et al. and can be found at: https://github.com/MIC-DKFZ/nnUNet
+
