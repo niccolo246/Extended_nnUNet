@@ -32,16 +32,64 @@ To install clone the git page and use pip install. Make sure latest version of P
           cd nnUNet
           pip install -e .
         
-### Experiment Planning and Preprocessing
+### A. Experiment Planning and Preprocessing
 
-Ensure data is in correct format compatible with nnUNet - refer to [original nnUNet page](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_conversion.md) for details. 
+Ensure data is in correct format compatible with nnUNet - refer to [original nnUNet page](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_conversion.md) for details. Furthermore paths and relevant folders must be correctly set up as shown [here](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/setting_up_paths.md).
 
-To commence experiment planning perform follwoing steps:
+To commence experiment planning perform following steps (XXX is the respective task ID):
 
-1) Run : 
+##### 1) Run basic planning: 
+
+```bash
+nnUNet_plan_and_preprocess -t XXX 
+```
+
+##### 2) Run planning for custom model: 
+
+##### Residual UNet:
+
+```bash
+nnUNet_plan_and_preprocess -t XXX -p nnUNetPlans_ResidualUNet_v2.1 -tr nnUNetTrainerV2_ResidualUNet
+```
+
+##### Inception UNet:
+
+```bash
+nnUNet_plan_and_preprocess -t XXX -p nnUNetPlans_InceptionUNet_v2.1 -tr nnUNetTrainerV2_InceptionUNet
+```
+
+##### Dense UNet:
+
+```bash
+nnUNet_plan_and_preprocess -t XXX -p nnUNetPlans_DenseUNet_v2.1 -tr nnUNetTrainerV2_DenseUNet
+```
+
+### B. Network Training
+
+We here concentrate on training demonstrations using the 3D full-resolution configuration for the UNet architecture variant. 
+
+Run the following depening on which architecture one wishes to experiemnt with:
+
+##### Residual UNet:
+
+```bash
+nnUNet_train 3d_fullres nnUNetTrainerV2_ResidualUNet TASK_NAME_OR_ID FOLD -p nnUNetPlans_ResidualUNet_v2.1
+```
+
+##### Inception UNet:
+
+```bash
+nnUNet_train 3d_fullres nnUNetTrainerV2_InceptionUNet TASK_NAME_OR_ID FOLD -p nnUNetPlans_InceptionUNet_v2.1
+```
+
+##### Dense UNet:
+
+```bash
+nnUNet_train 3d_fullres nnUNetTrainerV2_DenseUNet TASK_NAME_OR_ID FOLD -p nnUNetPlans_DenseUNet_v2.1
+```
 
 
-2) Run: 
+
 
 
 
