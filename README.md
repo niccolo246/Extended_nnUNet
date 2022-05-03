@@ -1,9 +1,9 @@
-# Modified nnUNet - Extending nnUNet Architecure Component.
+# Modified nnUNet - Extending the nnUNet Architecture Component.
 
 
 The nnUNet is, a fully automated and generalisable framework which automatically configures the full training pipeline for any medical segmentation task it is applied on, taking into account dataset properties and hardware constraints.  
 
-nnUNet was developed by Isensee et al. and further information on the original framework may be found by reading the follwing paper:
+nnUNet was developed by Isensee et al. and further information on the original framework may be found by reading the following paper:
 
 
     Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2020). nnU-Net: a self-configuring method 
@@ -12,5 +12,4 @@ nnUNet was developed by Isensee et al. and further information on the original f
 The nnUNet utilises a standard UNet type architecture which is self-configuring in terms of both depth and hyperparameters. 
 We procide code which extends the original nnUNet so as to allow the use of more advanced UNet variations which involve the integration of residual blocks, dense blocks, and inception blocks. 
 
-Note: The provided code adapts and modifies the original nnUNet code deveoped by Isensee et al. and can be found at: https://github.com/MIC-DKFZ/nnUNet
-
+Note: The provided code adapts and modifies the original nnUNet code developed by Isensee et al. and can be found at: https://github.com/MIC-DKFZ/nnUNet
