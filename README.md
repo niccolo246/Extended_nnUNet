@@ -21,13 +21,28 @@ Note: Our code adapts and modifies the original nnUNet code developed by Isensee
 
 # Usage
 
-Below a brief guide to using the modified nnUNet framework is presented; however, for a more detailed/insightful explanation please refer to the original nnUNet github page mentioned earlier (https://github.com/MIC-DKFZ/nnUNet.
+Below a brief guide to using the modified nnUNet framework is presented which is based on the original nnUNet guide; however, for a more detailed/insightful explanation please refer to the original nnUNet github page mentioned earlier (https://github.com/MIC-DKFZ/nnUNet).
 
 ### Installation
 
-To install clone the git page and use pip install. 
-```bash
+To install clone the git page and use pip install. Make sure latest version of PyTorch is installed. 
+
+
           git clone https://github.com/MIC-DKFZ/nnUNet.git
           cd nnUNet
           pip install -e .
-          ```
+        
+### Experiment Planning and Preprocessing
+
+Ensure data is in correct format compatible with nnUNet - refer to [original nnUNet page](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_conversion.md) for details. 
+
+To commence experiment planning perform follwoing steps:
+
+1) Run : 
+
+
+2) Run: 
+
+
+
+
