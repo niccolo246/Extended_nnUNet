@@ -19,3 +19,15 @@ Users can then easily experiment with a range of different UNet architectural va
 Note: Our code adapts and modifies the original nnUNet code developed by Isensee et al. which can be found at: https://github.com/MIC-DKFZ/nnUNet
 
 
+# Usage
+
+Below a brief guide to using the modified nnUNet framework is presented; however, for a more detailed/insightful explanation please refer to the original nnUNet github page mentioned earlier (https://github.com/MIC-DKFZ/nnUNet.
+
+### Installation
+
+To install clone the git page and use pip install. 
+```bash
+          git clone https://github.com/MIC-DKFZ/nnUNet.git
+          cd nnUNet
+          pip install -e .
+          ```
