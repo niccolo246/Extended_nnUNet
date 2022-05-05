@@ -1,6 +1,6 @@
 # Modified nnUNet - Extending the nnUNet Architecture Component.
 
-nnUNet was developed by Isensee et al. and further information on the original framework may be found by reading the following otiginal paper:
+nnUNet was developed by Isensee et al. and further information on the original framework may be found by reading the following original paper:
 
 
     Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2020). nnU-Net: a self-configuring method 
