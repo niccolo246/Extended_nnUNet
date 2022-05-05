@@ -20,7 +20,7 @@ Users can then easily experiment with a range of different UNet architectural va
 
 # Usage
 
-Below a brief guide to using the modified nnUNet framework is presented which is based on the original nnUNet guide by Isensee et al. For a more detailed/insightful explanation please refer to the [original nnUNet github page](https://github.com/MIC-DKFZ/nnUNet).
+Below a brief guide to using the modified nnUNet framework is presented which is based on the original nnUNet guide by Isensee et al. For a more detailed/insightful explanation please refer to the [original nnUNet repository](https://github.com/MIC-DKFZ/nnUNet).
 
 Note: The code in this repository is derived from the original nnUNet repository and is identical except for the modification/addition of the following files: `experiment_planner_dense3DUNet_v21.py`, `experiment_planner_inception3DUNet_v21.py`, `experiment_planner_residual3DUNet_v21.py`, `conv_blocks.py`, `generic_modular_custom_UNet.py`, `generic_modular_UNet.py`, `nnUNetTrainerV2_DenseUNet.py`, `nnUNetTrainerV2_InceptionUNet.py`, `nnUNetTrainerV2_ResidualUNet.py`.
 
@@ -94,7 +94,7 @@ For FOLD in [0, 1, 2, 3, 4], run:
 nnUNet_train 3d_fullres nnUNetTrainerV2_DenseUNet TASK_NAME_OR_ID FOLD -p nnUNetPlans_DenseUNet_v2.1
 ```
 
-Note: as discussed in the original nnUNet git repository, one doe not have to run all folds for inference to run (running one is sufficient).
+Note: as discussed in the [original nnUNet repository](https://github.com/MIC-DKFZ/nnUNet), one does not have to run training on all folds for inference to run (running full training on one fold only is sufficient).
 
 
 ### C. Running Inference
@@ -121,4 +121,4 @@ nnUNet_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -t TASK_NAME_OR_ID -m 3d_fullres
 nnUNet_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -t TASK_NAME_OR_ID -m 3d_fullres -p nnUNetPlans_DenseUNet_v2.1 -tr nnUNetTrainerV2_DenseUNet
 ```
 
-Note: For information on network ensembling refer to [original nnUNet github page](https://github.com/MIC-DKFZ/nnUNet). 
+Note: For information on network ensembling refer to [original nnUNet repository](https://github.com/MIC-DKFZ/nnUNet). 
