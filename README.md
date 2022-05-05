@@ -11,7 +11,7 @@ The nnUNet is a fully automated and generalisable framework which automatically 
 The nnUNet utilises a standard UNet type architecture which is self-configuring in terms of both depth and hyperparameters. 
 We extend the original [nnUNet code](https://github.com/MIC-DKFZ/nnUNet) by integrating features found in more advanced UNet variations, namely residual blocks, dense blocks, and inception blocks. 
 
-Users can then easily experiment with a range of different UNet architectural variations within the nnUNet framework and may choose the architecture variation which performs optimally depending on the dataset in question. This is evidenced in the follwing paper:
+Users can then easily experiment with a range of different UNet architectural variations within the nnUNet framework and may choose the architecture variation which performs optimally depending on the dataset in question. This is evidenced in the following paper:
 
 
     Paper coming soon ...
@@ -74,7 +74,7 @@ nnUNet_plan_and_preprocess -t TASK_ID -p nnUNetPlans_DenseUNet_v2.1 -tr nnUNetTr
 
 We here concentrate on training demonstrations using the 3D full-resolution configuration for the UNet architecture variant. 
 
-Run the following depending on which architecture one wishes to experiemnt training with:
+Run the following depending on which architecture one wishes to experiment training with:
 
 ##### Residual UNet:
 For FOLD in [0, 1, 2, 3, 4], run:
@@ -101,7 +101,7 @@ Note: as discussed in the [original nnUNet repository](https://github.com/MIC-DK
 
 We here concentrate on inference demonstrations using the 3D full-resolution configuration for the UNet architecture variant.
 
-Run the following depending on which architecture one wishes to experiemnt inference with:
+Run the following depending on which architecture one wishes to experiment inference with:
 
 ##### Residual UNet:
 
