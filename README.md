@@ -32,7 +32,7 @@ The following instructions are specific to the running of the nnUNet integrated 
 To install, clone the git page and use pip install. Make sure latest version of PyTorch is installed. 
 
 
-          git clone https://github.com/MIC-DKFZ/nnUNet.git
+          git clone https://github.com/MIC-DKFZ/nnUNet.git modify this 
           cd nnUNet
           pip install -e .
         
