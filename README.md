@@ -16,7 +16,7 @@ Users can then easily experiment with a range of different UNet architectural va
 
     Paper coming soon ...
 
-
+Note: If making use of this source code please reference both the above papers.
 
 # Usage
 
