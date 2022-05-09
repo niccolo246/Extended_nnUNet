@@ -1,4 +1,4 @@
-# Modified nnUNet - Extending the nnUNet Architecture Component.
+# Extended nnUNet: Integrating Residual, Dense, and Inception Blocks
 
 nnUNet was developed by Isensee et al. and further information on the original framework may be found by reading the following original paper:
 
