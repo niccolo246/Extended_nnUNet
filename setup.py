@@ -1,13 +1,13 @@
 from setuptools import setup, find_namespace_packages
 
-setup(name='nnunet',
+setup(name='extended_nnunet',
       packages=find_namespace_packages(include=["nnunet", "nnunet.*"]),
       version='1.7.0',
       description='Extended nnU-Net. Framework for out-of-the box biomedical image segmentation with added UNet models.',
       url='https://github.com/niccolo246/Extended_nnUNet.git',
-      original_nnunet_author='Division of Medical Image Computing, German Cancer Research Center',
-      original_author_email='f.isensee@dkfz-heidelberg.de',
-      original_license='Apache License Version 2.0, January 2004',
+      author='Original nnUNet: Division of Medical Image Computing, German Cancer Research Center',
+      author_email='original nnunet author email: f.isensee@dkfz-heidelberg.de',
+      license='Apache License Version 2.0, January 2004',
       install_requires=[
             "torch>=1.6.0a",
             "tqdm",
