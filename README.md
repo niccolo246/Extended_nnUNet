@@ -54,19 +54,19 @@ nnUNet_plan_and_preprocess -t TASK_ID
 ##### Residual UNet:
 
 ```bash
-nnUNet_plan_and_preprocess -t TASK_ID -pl3d nnUNetPlans_ResidualUNet_v2.1
+nnUNet_plan_and_preprocess -t TASK_ID -pl3d ExperimentPlanner3DResidualUNet_v21
 ```
 
 ##### Inception UNet:
 
 ```bash
-nnUNet_plan_and_preprocess -t TASK_ID -pl3d nnUNetPlans_InceptionUNet_v2.1
+nnUNet_plan_and_preprocess -t TASK_ID -pl3d ExperimentPlanner3DInceptionUNet_v21
 ```
 
 ##### Dense UNet:
 
 ```bash
-nnUNet_plan_and_preprocess -t TASK_ID -pl3d nnUNetPlans_DenseUNet_v2.1
+nnUNet_plan_and_preprocess -t TASK_ID -pl3d ExperimentPlanner3DDenseUNet_v21
 ```
 
 
