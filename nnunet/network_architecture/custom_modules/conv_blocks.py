@@ -27,7 +27,7 @@
 
 from copy import deepcopy
 from nnunet.network_architecture.custom_modules.helperModules import Identity
-from torch import nn
+from torch import nn, cat
 
 
 class ConvDropoutNormReLU(nn.Module):
