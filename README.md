@@ -34,7 +34,7 @@ To install, clone the git page and use pip install. Make sure latest version of 
 
           git clone https://github.com/niccolo246/Extended_nnUNet.git 
           cd Extended_nnUNet
-          pip install -e nnunet
+          pip install -e .
         
 
 ### A. Experiment Planning and Preprocessing
