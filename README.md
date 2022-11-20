@@ -14,7 +14,8 @@ We extend the original [nnUNet code](https://github.com/MIC-DKFZ/nnUNet) by inte
 Users can then easily experiment with a range of different UNet architectural variations within the nnUNet framework and may choose the architecture variation which performs optimally depending on the dataset in question. This is evidenced in the following paper:
 
 
-    McConnell, N., Miron, A., Wang, Z., & Li, Y. (2022, July). Integrating Residual, Dense, and Inception Blocks into the nnUNet. In 2022 IEEE 35th International Symposium on Computer-Based Medical Systems (CBMS) (pp. 217-222). IEEE.
+    McConnell, N., Miron, A., Wang, Z., & Li, Y. (2022, July). Integrating Residual, Dense, and Inception Blocks into the nnUNet. In 2022 IEEE 35th          
+    International Symposium on Computer-Based Medical Systems (CBMS) (pp. 217-222). IEEE.
 
 Note: If making use of this source code please reference both the above papers.
 
