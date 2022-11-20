@@ -332,18 +332,9 @@ class PlainConvUNetDecoder(nn.Module):
         return tmp * batch_size
 
 
-
 class PlainConvUNet(SegmentationNetwork):
     use_this_for_batch_size_computation_2D = 1167982592.0
     use_this_for_batch_size_computation_3D = 1152286720.0
-
-
-    default_base_num_features = 32
-    default_conv_per_stage = (1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-
-    default_blocks_per_stage_encoder = (1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-    default_blocks_per_stage_decoder = (1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-    default_min_batch_size = 2 # this is what works with the numbers above
 
     def __init__(self, input_channels, base_num_features, num_blocks_per_stage_encoder, feat_map_mul_on_downscale,
                  pool_op_kernel_sizes, conv_kernel_sizes, props, num_classes, num_blocks_per_stage_decoder,
