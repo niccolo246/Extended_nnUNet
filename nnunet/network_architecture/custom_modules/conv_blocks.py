@@ -28,6 +28,7 @@
 from copy import deepcopy
 from nnunet.network_architecture.custom_modules.helperModules import Identity
 from torch import nn, cat
+import torch
 
 
 class ConvDropoutNormReLU(nn.Module):
@@ -234,9 +235,34 @@ class ResidualLayer(nn.Module):
             *[block(output_channels, output_channels, kernel_size, network_props) for _ in
               range(num_blocks - 1)]
         )
+        
+        #Start of Squeeze and Excited block
+        num_channels = input_channels
+        reduction_ratio = 2
+        self.avg_pool = nn.AdaptiveAvgPool3d(1)
+        num_channels_reduced = num_channels // reduction_ratio
+        self.reduction_ratio = reduction_ratio
+        self.fc1 = nn.Linear(num_channels, num_channels_reduced, bias=True)
+        self.fc2 = nn.Linear(num_channels_reduced, num_channels, bias=True)
+        self.relu = nn.ReLU()
+        self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
-        return self.convs(x)
+        
+        #Squeeze and excited block
+        batch_size, num_channels, D, H, W = x.size()
+        # Average along each channel
+        squeeze_tensor = self.avg_pool(x)
+
+        # channel excitation
+        fc_out_1 = self.relu(self.fc1(squeeze_tensor.view(batch_size, num_channels)))
+        fc_out_2 = self.sigmoid(self.fc2(fc_out_1))
+
+        output_tensor = torch.mul(x, fc_out_2.view(batch_size, num_channels, 1, 1, 1))
+        
+        return self.convs(output_tensor)
+
+        #return self.convs(x)
 
 
 ############### Defining Dense Layer/Block Here #####################

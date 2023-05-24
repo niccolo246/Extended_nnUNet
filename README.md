@@ -11,19 +11,12 @@ The nnUNet is a fully automated and generalisable framework which automatically 
 The nnUNet utilises a standard UNet type architecture which is self-configuring in terms of both depth and hyperparameters. 
 We extend the original [nnUNet code](https://github.com/MIC-DKFZ/nnUNet) by integrating features found in more advanced UNet variations, namely residual blocks, dense blocks, and inception blocks. 
 
-Users can then easily experiment with a range of different UNet architectural variations within the nnUNet framework and may choose the architecture variation which performs optimally depending on the dataset in question. This is evidenced in the following paper:
-
-
-    McConnell, N., Miron, A., Wang, Z., & Li, Y. (2022, July). Integrating Residual, Dense, and Inception Blocks into the nnUNet. 
-    In 2022 IEEE 35th International Symposium on Computer-Based Medical Systems (CBMS) (pp. 217-222). IEEE.
-
-Note: If making use of this source code please reference both the above papers.
 
 # Usage
 
 Below a brief guide to using the modified nnUNet framework is presented which is based on the original nnUNet guide by Isensee et al. For a more detailed/insightful explanation please refer to the [original nnUNet repository](https://github.com/MIC-DKFZ/nnUNet).
 
-Note: The code in this repository is derived from the original nnUNet repository and is identical except for the modification/addition of the following files: `experiment_planner_dense3DUNet_v21.py`, `experiment_planner_inception3DUNet_v21.py`, `experiment_planner_residual3DUNet_v21.py`, `conv_blocks.py`, `generic_modular_custom_UNet.py`, `generic_modular_UNet.py`, `nnUNetTrainerV2_DenseUNet.py`, `nnUNetTrainerV2_InceptionUNet.py`, `nnUNetTrainerV2_ResidualUNet.py`.
+Note: The code in this repository is derived from the original nnUNet repository and is identical except for the modification/addition of the following files:`experiment_planner_residual3DUNet_v21.py`, `conv_blocks.py`, `generic_modular_custom_UNet.py`, `generic_modular_UNet.py`, `nnUNetTrainerV2_ResidualUNet.py`.
 
 
 The following instructions are specific to the running of the nnUNet integrated Residual, Inception, and Dense variations of the UNet. 
@@ -58,18 +51,6 @@ nnUNet_plan_and_preprocess -t TASK_ID
 nnUNet_plan_and_preprocess -t TASK_ID -pl3d ExperimentPlanner3DResidualUNet_v21
 ```
 
-##### Inception UNet:
-
-```bash
-nnUNet_plan_and_preprocess -t TASK_ID -pl3d ExperimentPlanner3DInceptionUNet_v21
-```
-
-##### Dense UNet:
-
-```bash
-nnUNet_plan_and_preprocess -t TASK_ID -pl3d ExperimentPlanner3DDenseUNet_v21
-```
-
 
 ### B. Network Training
 
@@ -81,18 +62,6 @@ Run the following depending on which architecture one wishes to experiment train
 For FOLD in [0, 1, 2, 3, 4], run:
 ```bash
 nnUNet_train 3d_fullres nnUNetTrainerV2_ResidualUNet TASK_NAME_OR_ID FOLD -p nnUNetPlans_ResidualUNet_v2.1
-```
-
-##### Inception UNet:
-For FOLD in [0, 1, 2, 3, 4], run:
-```bash
-nnUNet_train 3d_fullres nnUNetTrainerV2_InceptionUNet TASK_NAME_OR_ID FOLD -p nnUNetPlans_InceptionUNet_v2.1
-```
-
-##### Dense UNet:
-For FOLD in [0, 1, 2, 3, 4], run:
-```bash
-nnUNet_train 3d_fullres nnUNetTrainerV2_DenseUNet TASK_NAME_OR_ID FOLD -p nnUNetPlans_DenseUNet_v2.1
 ```
 
 Note: as discussed in the [original nnUNet repository](https://github.com/MIC-DKFZ/nnUNet), one does not have to run training on all folds for inference to run (running full training on one fold only is sufficient).
@@ -110,16 +79,3 @@ Run the following depending on which architecture one wishes to experiment infer
 nnUNet_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -t TASK_NAME_OR_ID -m 3d_fullres -p nnUNetPlans_ResidualUNet_v2.1 -tr nnUNetTrainerV2_ResidualUNet
 ```
 
-##### Inception UNet:
-
-```bash
-nnUNet_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -t TASK_NAME_OR_ID -m 3d_fullres -p nnUNetPlans_InceptionUNet_v2.1 -tr nnUNetTrainerV2_InceptionUNet
-```
-
-##### Dense UNet:
-
-```bash
-nnUNet_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -t TASK_NAME_OR_ID -m 3d_fullres -p nnUNetPlans_DenseUNet_v2.1 -tr nnUNetTrainerV2_DenseUNet
-```
-
-Note: For information on network ensembling refer to [original nnUNet repository](https://github.com/MIC-DKFZ/nnUNet). 
