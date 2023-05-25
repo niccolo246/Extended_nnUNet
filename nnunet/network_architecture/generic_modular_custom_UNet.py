@@ -27,6 +27,7 @@
 
 import numpy as np
 import torch
+import torch.nn.functional as F
 
 from nnunet.network_architecture.custom_modules.conv_blocks import BasicResidualBlock, ResidualLayer, DenseLayer, \
                                                                    BasicDenseBlock, BasicInceptionBlock, InceptionLayer
@@ -356,6 +357,8 @@ class ResidualUNet(SegmentationNetwork):
                                            deep_supervision, upscale_logits, block=block)
         if initializer is not None:
             self.apply(initializer)
+
+
 
     def forward(self, x):
         skips = self.encoder(x)
