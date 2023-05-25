@@ -123,3 +123,4 @@ nnUNet_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -t TASK_NAME_OR_ID -m 3d_fullres
 ```
 
 Note: For information on network ensembling refer to [original nnUNet repository](https://github.com/MIC-DKFZ/nnUNet). 
+# RETOUCH_Segmention_Challenge
